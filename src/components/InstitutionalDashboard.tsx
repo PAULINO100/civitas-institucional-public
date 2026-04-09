@@ -326,7 +326,10 @@ const InstitutionalDashboard: React.FC<InstitutionalDashboardProps> = ({ dict, r
                         {dict.proposer.results}
                       </button>
                     )}
-                    <button className="flex-1 sm:flex-none px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-[10px] font-bold uppercase tracking-widest rounded-xl border border-white/10 transition-all flex items-center justify-center gap-2">
+                    <button 
+                      onClick={() => window.location.href = "https://zkid-soberana-app.vercel.app"}
+                      className="flex-1 sm:flex-none px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-[10px] font-bold uppercase tracking-widest rounded-xl border border-white/10 transition-all flex items-center justify-center gap-2"
+                    >
                        ZK-Audit
                     </button>
                   </div>
