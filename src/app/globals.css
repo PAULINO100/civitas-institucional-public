@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background-sovereign: #020617;
+  --color-primary: #00A86B;
+  --color-accent: #0EA5E9;
+  --color-gold: #D4AF37;
+  --color-foreground: #F5F5F5;
+  
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+
+:root {
+  --background: #010409;
+  --foreground: #F5F5F5;
+  --primary: #00ffa3; /* Emerald Neon */
+  --accent: #0EA5E9;
+  --gold: #D4AF37;
+  --glass-bg: rgba(15, 23, 42, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-glow: 0 0 25px rgba(0, 255, 163, 0.15);
+}
+
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Inter, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Sovereign Aurora Background */
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 100% 0%, rgba(0, 255, 163, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(14, 165, 233, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+/* Technical Grid Overlay - Refined */
+.tech-grid {
+  background-image: 
+    linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at center, black, transparent 90%);
+  opacity: 0.5;
+}
+
+/* Glassmorphism 2.0 Utility */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px) saturate(210%);
+  -webkit-backdrop-filter: blur(40px) saturate(210%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 
+    0 15px 45px -10px rgba(0, 0, 0, 0.9),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    0 0 15px rgba(0, 255, 163, 0.05);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.glass-panel:hover {
+  border-color: rgba(0, 168, 107, 0.4);
+  box-shadow: 
+    0 25px 50px -15px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(0, 168, 107, 0.2);
+}
+
+/* Animations */
+@keyframes title-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #fff 0%, #00ffa3 50%, #fff 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: title-shimmer 4s linear infinite;
+}
+
+
+
+@keyframes bar-grow {
+  from { width: 0; }
+  to { width: var(--final-width); }
+}
+
+.animate-bar {
+  animation: bar-grow 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
